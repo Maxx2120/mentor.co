@@ -11,7 +11,9 @@ const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 // Serve static frontend files from 'public' directory
-app.use(express.static(path.join(__dirname, 'public')));
+// Static assets are now located at project root instead of a separate "public" folder
+app.use(express.static(path.join(__dirname)));
+
 app.use(express.json());
 
 // Content Config API
